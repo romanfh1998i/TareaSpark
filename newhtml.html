@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+	<head>
+		<title>tarea 3</title>
+
+
+<style>
+body {background-color: blue;}
+h1 {color: grey;}
+p {color: red;}
+</style>
+	</head>
+
+<body>
+
+
+<h1>Nintendo Switch</h1>
+<p id="demo">es la séptima consola de videojuegos principal desarrollada por Nintendo. Conocida en el desarrollo por su nombre de código NX, se dio a conocer en octubre de 2016 y fue lanzado mundialmente el 3 de marzo de 2017. Nintendo considera el Switch una consola "híbrida"; Se diseña sobre todo como consola casera, con la unidad principal insertada en una estación de acoplamiento para conectar con un televisor. Alternativamente, puede ser removido de la base y utilizado de forma similar a una computadora tablet a través de su pantalla táctil LCD, o colocado en un modo de mesa independiente visible para varios jugadores. El conmutador utiliza controladores inalámbricos Joy-Con, que incluyen botones estándar y un joystick direccional para la entrada del usuario, detección de movimiento y retroalimentación táctil de alta definición. El Joy-Con puede conectarse a ambos lados de la consola para soportar juegos de estilo portátil, conectarse a un accesorio "Grip" para proporcionar un formato tradicional de consola de juegos o ser utilizado individualmente en la mano como el mando Wii, soportando modos multijugador locales. El software de Switch soporta juegos en línea a través de la conectividad estándar de Internet, así como la conectividad ad hoc inalámbrica local con otras consolas de Switch. Los juegos de conmutación y el software están disponibles tanto en los cartuchos físicos ROM de flash como en la distribución digital y no utilizan el bloqueo de región. A partir de 2017, Switch compite en el mercado de juegos electrónicos con Sony PlayStation 4 y Microsoft Xbox One.</p>
+
+ <input type="button" value="Load" onClick="action();" />
+ <button id="button" type="button">URL</button>
+<p id="div1">roman carga a tu cuenta</p>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script>
+         var hidden = false;
+        function action() {
+            hidden = !hidden;
+            if(hidden) {
+                document.getElementById('demo').style.visibility = 'hidden';
+            } else {
+                document.getElementById('demo').style.visibility = 'visible';
+
+
+
+            }
+        }
+        
+        $(document).ready(function () {
+            $("#button").click(function () {
+                $.get("/roman", function (data) {
+                    $("#div1").html( data );
+                });
+            });
+        });
+    </script>
+
+   
+
+
+</body>
+
+</html>
